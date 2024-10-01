@@ -39,7 +39,7 @@ export const loginUser = createAsyncThunk<LoginResponse, LoginData>(
       return response.data;
     } catch (error) {
       console.log(error);
-
+      alert('Hubo un error: ');
       alert('Hubo un error: ');
 
       if (axios.isAxiosError(error)) {
