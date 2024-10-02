@@ -1,5 +1,4 @@
 {
-  "proxy": "http:///api",
   "name": "arco-furniture-sergio",
   "version": "0.1.0",
   "private": true,

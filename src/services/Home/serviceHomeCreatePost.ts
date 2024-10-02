@@ -5,7 +5,7 @@ export const ServiceHomeCreatePost = async (
   setModalEditPostActive: any,
 ) => {
   // const response = await fetch(`http://localhost:3500/posts/${posts[0].  _id}`, {
-  const response = await fetch(`/posts/${posts[0]._id}`, {
+  const response = await fetch(`${process.env.REACT_APP_API_SERVER_URL}/posts/${posts[0]._id}`, {
     method: 'PATCH',
     headers: {
       'Content-type': 'application/json',

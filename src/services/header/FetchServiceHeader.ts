@@ -3,7 +3,7 @@ export const FetchServiceHeader = async (
   text: string,
   userId: string | undefined,
 ) => {
-  const response = await fetch('/posts', {
+  const response = await fetch(`${process.env.REACT_APP_API_SERVER_URL}/posts`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -20,9 +20,9 @@ export const FetchServiceHeader = async (
     return;
   }
   const post = await response.json();
-  console.log(post);
+  /*console.log(post);
   alert('Post text:' + text);
   alert('Post text:' + post.text);
-  alert('Post userId:' + userId);
+  alert('Post userId:' + userId);*/
   return post;
 };

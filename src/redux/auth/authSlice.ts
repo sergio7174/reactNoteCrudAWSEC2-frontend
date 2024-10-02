@@ -23,12 +23,16 @@ interface LoginData {
 }
 
 export const loginUser = createAsyncThunk<LoginResponse, LoginData>(
-  'auth/login',
+  `${process.env.REACT_APP_API_SERVER_URL}/auth/login`,
   async ({ email, password }, { rejectWithValue }) => {
-    //alert(`${process.env.REACT_API_SERVER_URL}` + '/users/login');
+    /*alert(
+      'process.env.REACT_APP_API_SERVER_URL}/users/login: ' +
+        `${process.env.REACT_APP_API_SERVER_URL}` +
+        '/users/login',
+    );*/
     try {
       const response = await axios.post<LoginResponse>(
-        '/users/login',
+        `${process.env.REACT_APP_API_SERVER_URL}/users/login`,
         //`/users/login`,
         {
           email,
@@ -39,7 +43,10 @@ export const loginUser = createAsyncThunk<LoginResponse, LoginData>(
       return response.data;
     } catch (error) {
       console.log(error);
-      alert('Hubo un error: ');
+      /*alert(
+        'process.env.REACT_API_SERVER_URL}/users/login: ' +
+          `${process.env.REACT_APP_API_SERVER_URL}/users/login`,
+      );*/
       alert('Hubo un error: ');
 
       if (axios.isAxiosError(error)) {
@@ -51,11 +58,11 @@ export const loginUser = createAsyncThunk<LoginResponse, LoginData>(
 );
 
 export const registerUser = createAsyncThunk<LoginResponse, LoginData>(
-  'auth/login',
+  `${process.env.REACT_APP_API_SERVER_URL}/auth/login`,
   async ({ name, email, password }, { rejectWithValue }) => {
     try {
       const response = await axios.post<LoginResponse>(
-        `${process.env.REACT_API_SERVER_URL}/users/register`,
+        `${process.env.REACT_APP_API_SERVER_URL}/users/register`,
         //`/users/register`,
         {
           name,

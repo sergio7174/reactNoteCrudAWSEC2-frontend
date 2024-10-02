@@ -48,14 +48,13 @@ const Home: React.FC = () => {
         setActive={setModalCreatePostActive}
         setPosts={setPosts}
       />
-      <h2>Sergio</h2>
-
       <div className="wrapper">
         <div className="posts">
           {posts.map((post) => (
             <div key={post._id} className="card-wrapper">
               <div className="card-header-wrapper">
                 <h2>{post.user.name}</h2>
+                <h2 hidden>{post._id}</h2>
                 <div>
                   <button
                     className="edit-btn"
